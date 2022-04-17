@@ -17,6 +17,7 @@ import { Container, Stack } from '@chakra-ui/react';
 import TestimonialForm from '../Components/Testimonials/TestimonialsForm';
 import UserForm from '../Components/Users/UsersForm';
 import BackOfficeSlides from '../Components/Slides/backoffice';
+import ScrollToTop from '../Components/ScrollToTop/ScrollToTop';
 // import ActivitiesForm from '../Components/Activities/ActivitiesForm';
 
 const DashboardPrivate = () => {
@@ -28,6 +29,7 @@ const DashboardPrivate = () => {
 
   return (
   // Este es el layour del backend arreglar responsive con display flex y columna cuando es mobile
+    <ScrollToTop>
     <Container maxW='100%' p={0}>
       <Stack maxW='100%' direction={['column', 'column', 'row']} >
         <Sidebar />
@@ -56,6 +58,7 @@ const DashboardPrivate = () => {
         </Switch>
       </Stack>
     </Container>
+    </ScrollToTop>
   );
 };
 
