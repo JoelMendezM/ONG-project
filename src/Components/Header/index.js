@@ -26,7 +26,6 @@ import {
 
 import { NavLink as RouterLink, Link as ReachLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import DonateButton from "../DonateButton/DonateButton";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -94,7 +93,6 @@ export default function WithSubnavigation() {
         >
           {isLoggedIn ? (
             <>
-            <DonateButton/>
               {isAdmin && (
                 <Link as={ReachLink} to="/backoffice">
                   <Button bg="none" fontSize="sm" _hover={{ bg: "none" }}>

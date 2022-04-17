@@ -15,7 +15,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const TableCategorie = () => {
   const { list: categories } = useSelector((state) => state.categories);
-  console.log(categories);
 
   const dispatch = useDispatch();
 

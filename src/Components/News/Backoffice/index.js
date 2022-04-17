@@ -29,8 +29,6 @@ const BackOfficeNews = () => {
   const { news } = useSelector(state => state.news);
   const { status } = useSelector(state => state.news);
 
-  console.log(news.data);
-
   useEffect(() => {
     dispatch(searchNews(searchValues));
   }, [dispatch, searchValues]);

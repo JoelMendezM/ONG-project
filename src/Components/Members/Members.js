@@ -10,8 +10,6 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 const Members = (membersData) => {
   const location = useLocation().pathname.toLocaleLowerCase();
 
-  console.log(location);
-
   const FORMATS = [
     'image/png',
     'image/jpg'

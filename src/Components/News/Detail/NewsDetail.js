@@ -21,15 +21,12 @@ const NewsDetail = ({ tittle, news }) => {
   useEffect(() => {
     const dataComments = comments.comments;
     setNewsDetailCommentsReducer(dataComments);
-    console.log('esta es la data', dataComments);
   }, [comments]);
 
   useEffect(() => {
     let callFetchApi = 0;
     getNews(id).then((newsDetailDataAPI) => {
-      console.log('newsDetailDataAPI', newsDetailDataAPI);
       const dataApi = newsDetailDataAPI.data;
-      console.log('dataApi', dataApi);
       setNewsDetail(dataApi);
     });
 

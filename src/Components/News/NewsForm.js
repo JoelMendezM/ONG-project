@@ -96,7 +96,6 @@ const formNewsSchema = Yup.object().shape({
 const NewsForm = () => {
   const { id } = useParams();
   const handleCreateEditNews = (values, id) => {
-    // console.log(values, id)
     if (id) {
       editNews('news', id, values);
     } else {
@@ -129,7 +128,6 @@ const NewsForm = () => {
   // }, [id, setForm])
 
   // useEffect(() => {
-  //     console.log(categories)
   // }, [])
 
   return (
