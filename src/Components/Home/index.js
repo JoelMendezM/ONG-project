@@ -45,16 +45,7 @@ const Home = () => {
       showAlertErr({ text: 'Upssss...!! sucedió un error' });
     }
   }, []);
-  // const getDataNews = useCallback(async () => {
-  //   try {
-  //     const { data } = await get('/news');
-  //     console.log('dataGetDataNews', data);
-  //     setNewsData(data.data);
-  //   } catch (e) {
-  //     console.log(e);
-  //     showAlertErr({ text: 'Upssss...!! sucedió un error' });
-  //   }
-  // }, []);
+
   const getDataTestimonials = useCallback(async () => {
     try {
       const { data } = await get(process.env.REACT_APP_TESTIMONIALS);
@@ -68,22 +59,8 @@ const Home = () => {
   useEffect(() => {
     getDataOrganization();
     dispatch(getAllNews());
-    // getDataNews();
     getDataTestimonials();
   }, []);
-
-  // useEffect(async () => {
-  //   try {
-  //     // setLoading(true);
-  //     await dispatch(getAllNews());
-  //     console.log('newsGetAllNews', news);
-  //     setNewsData(news.news);
-  //   } catch (error) {
-  //     console.log(error);
-  //     // setError(true);
-  //   }
-  //   setLoading(false);
-  // }, [dispatch]);
 
   return (
     <>
@@ -132,7 +109,7 @@ const Home = () => {
               <Link to="/Novedades">
                 <Center>
                   <Button
-                    display={{ base: 'none', md: 'inline-flex' }}
+                    display={{ base: 'flex', md: 'inline-flex' }}
                     fontSize={'sm'}
                     fontWeight={600}
                     color={'blue.300'}
@@ -182,7 +159,7 @@ const Home = () => {
             <Link to='/testimonials'>
               <Center>
                 <Button
-                  display={{ base: 'none', md: 'inline-flex' }}
+                  display={{ base: 'flex', md: 'inline-flex' }}
                   fontSize={'sm'}
                   fontWeight={600}
                   color={'blue.300'}

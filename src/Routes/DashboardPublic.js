@@ -7,6 +7,7 @@ import PageNotFound from '../Components/PageNotFound';
 import News from '../Components/News';
 import NewsForm from '../Components/News/NewsForm';
 import NewsDetail from '../Components/News/Detail/NewsDetail';
+import ScrollToTop from '../Components/ScrollToTop/ScrollToTop';
 
 // import Layout from '../Components/Layout';
 // import { AnimatedSwitch, spring } from 'react-router-transition';
@@ -67,6 +68,7 @@ const TestimonialList = React.lazy(() =>
 const DashboardPublic = () => {
   return (
     <>
+      <ScrollToTop>
       <WithSubnavigation />
       <main style={{ width: '100%', minHeight: '500px' }}>
         <Switch>
@@ -87,7 +89,6 @@ const DashboardPublic = () => {
             <Route exact path='/create-project' component={ProjectsForm} />
             <Route exact path='/update-project/:id' component={ProjectsForm} />
             <Route exact path='/about-us/members' component={MembersList} />
-            <Route exact path='/nosotros' component={About} />
             <Route exact path='/testimonialsForms' component={TestimonialForm} />
             <Route exact path='/pagar' component={ButtonPay} />
 
@@ -96,6 +97,7 @@ const DashboardPublic = () => {
         </Switch>
       </main>
       <FooterPublic />
+      </ScrollToTop>
     </>
   );
 };

@@ -1,5 +1,3 @@
-/// ///////////////////
-
 import megaphone from './assets/megaphone.png';
 import activities from './assets/notification.png';
 import chat from './assets/chat.png';
