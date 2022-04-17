@@ -20,7 +20,7 @@ import {
 
 const handleChange = (e) => {
   if (e.target.value.length > 3) {
-    console.log(e.target.value);
+    const inputValue = e.target.value;
   }
 };
 

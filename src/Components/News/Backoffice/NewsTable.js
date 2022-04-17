@@ -63,7 +63,6 @@ const BackOfficeNews = () => {
         .then((r) => r.json())
         .then((r) => {
           const result = r.data;
-          console.log('me ejecuto');
           setDataNews(result);
         })
         .catch((error) => {
@@ -82,7 +81,6 @@ const BackOfficeNews = () => {
         .then((r) => r.json())
         .then((r) => {
           const result = r.data;
-          console.log('me ejecuto con cat');
           setDataNews(result);
         })
         .catch((error) => {

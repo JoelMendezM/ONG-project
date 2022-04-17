@@ -54,7 +54,6 @@ export const deleteNovedad = createAsyncThunk(
   'news/deleteNews',
   async (id) => {
     try {
-      console.log('borro');
       return await deleteApiNews(id);
     } catch (error) {
       console.log(error, 'ERROR');

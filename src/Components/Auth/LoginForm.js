@@ -38,7 +38,6 @@ const LoginForm = () => {
         try {
           const result = await login(values.email, values.password);
           if (!result.error) {
-            console.log(result);
             const { token, user } = await result.data;
             sessionStorage.setItem('login-token', token);
             sessionStorage.setItem('login-role', user.role_id);

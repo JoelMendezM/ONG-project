@@ -20,7 +20,6 @@ const MembersForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postMember(initialValues);
-    console.log(initialValues);
   };
 
   return (

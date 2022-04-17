@@ -27,7 +27,6 @@ const Footer = () => {
     quepe && setLogined(true);
     // && setIsLoggedIn(true);
   }, []);
-  console.log(logined);
   const SubscriptionSchema = Yup.object().shape({
     email: Yup.string()
       .email('Por favor, introduzca un email válido.')
@@ -50,7 +49,6 @@ const Footer = () => {
       AlertOkeyInfo({ title: 'Muchas gracias', text: 'Te has subscripto a Newsletter' });
       // Here we will introduce the Axios POST logic in the future
       setSubscriberList((prev) => [...prev, values.email]);
-      console.log(values.email);
     },
     validationSchema: SubscriptionSchema
   });

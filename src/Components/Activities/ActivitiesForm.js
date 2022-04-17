@@ -8,12 +8,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { post } from '../../Services/publicApiService';
 
-// <ActivitiesForm { ...responseAPI} />
 const ActivitiesForm = (activitiesData) => {
-  /*     const [values, setValues] = useState([])
-        console.log(`valores ingresados: `, values) */
-
-  // Returns the url string but converted to lowercase
   const location = useLocation().pathname.toLocaleLowerCase();
 
   const SUPPORTED_FORMATS = [
@@ -46,11 +41,9 @@ const ActivitiesForm = (activitiesData) => {
             onSubmit={(values, { resetForm }) => {
               if (location.includes('create')) {
                 post('/activities', values);
-                console.log(values);
               } else if (location.includes('edit')) {
-                console.log(values);
+                resetForm();
               }
-              resetForm();
             }}
 
         >

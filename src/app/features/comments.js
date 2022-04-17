@@ -16,7 +16,7 @@ export const postCommentReducer = createAsyncThunk(
   'comments/postCommentReducer',
   async () => {
     try {
-      return await postComment().then(res => console.log('res', res));
+      return await postComment().then(res => res);
     } catch (error) {
       console.log(error, 'ERROR');
     }
@@ -27,7 +27,7 @@ export const editCommentReducer = createAsyncThunk(
   'comments/editCommentReducer',
   async () => {
     try {
-      return await editComment().then(res => console.log('res', res));
+      return await editComment().then(res => res);
     } catch (error) {
       console.log(error, 'ERROR');
     }
@@ -38,7 +38,7 @@ export const deleteCommentReducer = createAsyncThunk(
   'comments/deleteCommentReducer',
   async () => {
     try {
-      return await deleteComment().then(res => console.log('res', res));
+      return await deleteComment().then(res => res);
     } catch (error) {
       console.log(error, 'ERROR');
     }
