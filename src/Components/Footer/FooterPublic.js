@@ -35,7 +35,7 @@ const FooterPublic = () => {
               width: '100%',
               height: '40px',
               margin: '-1px',
-              marginTop: '150px'
+              marginTop: '70px'
             }}>
             </div>
             <Container bg='gray.300' padding='4' maxW='100%'>
