@@ -24,7 +24,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-import { Link as ReachLink } from "react-router-dom";
+import { NavLink as RouterLink, Link as ReachLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import DonateButton from "../DonateButton/DonateButton";
 
@@ -146,8 +146,10 @@ const DesktopNav = ({ isLoggedIn }) => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
-                as={ReachLink}
+                onClick={navItem.event}
+                as={RouterLink}
                 p={2}
+                _activeLink={ navItem.href !== '/' ? {fontWeight: "bold"} : 'none'}
                 to={navItem.href}
                 fontSize={"sm"}
                 fontWeight={500}
@@ -187,11 +189,12 @@ const DesktopNav = ({ isLoggedIn }) => {
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Link
-      as={ReachLink}
+      as={RouterLink}
       to={href}
       role={"group"}
       display={"block"}
       p={2}
+      _activeLink={{ fontWeight: "bold" }}
       rounded={"md"}
       _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
     >
@@ -241,11 +244,10 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
-      <Link as={ReachLink} to={href}>
+      <Link as={RouterLink} to={href}>
       <Flex
         py={2}
-        
-        
+        _activeLink={{ fontWeight: "bold" }}
         justify={"space-between"}
         align={"center"}
         _hover={{
@@ -303,10 +305,14 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Inicio",
     href: "/",
+    vali1 : '1',
+    vali2 : '1',
   },
   {
     label: "Nosotros",
     href: "/nosotros",
+    vali1 : '2',
+    vali2 : '2',
   },
   {
     label: 'Actividades',
@@ -319,6 +325,7 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Campañas',
     href: '/',
+    event: e => e.preventDefault(),
     children: [
       {
         label: "Escuela",
