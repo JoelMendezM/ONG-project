@@ -36,7 +36,6 @@ const validationSchema = Yup.object({
   logo: Yup.mixed()
     .required('Por favor cargue un logo')
     .test('fileFormat', 'sòlo se permiten formatos .png o .jpg', (value) => {
-      console.log('value dfile yup ', value);
       return value && FORMATS.includes(value.type);
     }),
   shortDescription: Yup.string()
@@ -106,7 +105,6 @@ const EditForm = () => {
                 onChange={(event, editor) => {
                   const file = event.target.files;
                   formik.setFieldValue('logo', file);
-                  // console.log({ event, editor });
                 }}
               ></Input>
 
@@ -133,12 +131,10 @@ const EditForm = () => {
                 onChange={(event, editor) => {
                   const data = editor.getData();
                   formik.setFieldValue('shortDescription', data);
-                  console.log({ event, editor, data });
                 }}
                 onBlur={(event, editor) => {
                   const data = editor.getData();
                   formik.setFieldValue('shortDescription', data);
-                  console.log('Blur.', editor);
                 }}
               />
 

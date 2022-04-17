@@ -95,7 +95,6 @@ const SlidesForm = ({ state }) => {
             data={initialValues.description}
             onChange={(event, editor) => {
               const data = editor.getData();
-              console.log(data);
               setInitialValues({ ...initialValues, description: data });
             }}
           />

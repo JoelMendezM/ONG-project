@@ -63,7 +63,6 @@ const RegisterForm = () => {
   const onCheckChange = (string) => {
     setRegisterValue(string);
   };
-  console.log(registerValue);
 
   useEffect(() => {
     // Esto es para que no pueda entrar al registro si ya esta autenticado
@@ -78,7 +77,6 @@ const RegisterForm = () => {
       onSubmit={async (values, action) => {
         try {
           const result = await register(values.name, values.email, values.password);
-          console.log(result);
           if (!result) {
             showAlertErr({ text: 'Ocurrio un error al registrar el usuario, puede que este usuario ya exista.' });
           } else if (result.success) {
