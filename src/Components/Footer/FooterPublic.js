@@ -97,25 +97,25 @@ const FooterPublic = () => {
                             </Box>
                         </Show>
                         <Stack flex={1} p={4} direction={['column', 'column', 'row']}>
-                            <a href={organization.twitter_url} className="links tw">
+                            <a href='https://twitter.com/ONGSomosMas' className="links tw" target='blank'>
                                 <AiOutlineTwitter />
                                 <Show above='lg'>
                                     <span>Twitter</span>
                                 </Show>
                             </a>
-                            <a href={organization.facebook_url} className="links fb">
+                            <a href='https://www.facebook.com/profile.php?id=100077792335889' className="links fb" target='blank'>
                                 <AiFillFacebook />
                                 <Show above='lg'>
                                     <span>Facebook</span>
                                 </Show>
                             </a>
-                            <a href={organization.linkedin_url} className="links ln">
+                            <a href='https://www.linkedin.com/company/somosmas/' className="links ln" target='blank'>
                                 <AiFillLinkedin />
                                 <Show above='lg'>
                                     <span>LinkedIn</span>
                                 </Show>
                             </a>
-                            <a href={organization.instagram_url} className="links ig">
+                            <a href='https://www.instagram.com/somos.mas.ong/' className="links ig" target='blank'>
                                 <AiFillInstagram />
                                 <Show above='lg'>
                                     <span>Instagram</span>

@@ -5,7 +5,6 @@ import {
   useBreakpointValue,
   Stack,
   Heading,
-  Text,
   Container
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
@@ -127,13 +126,13 @@ const CarouselSlides = () => {
                 >
                   {card.name}
                 </Heading>
-                <Text
+                <Box
                   fontSize={{ base: 'sm', lg: 'lg' }}
                   color="white"
                   fontWeight="bold"
                 >
                   <RenderHtml htmlText={card.description}/>
-                </Text>
+                </Box>
               </Stack>
             </Container>
           </Box>

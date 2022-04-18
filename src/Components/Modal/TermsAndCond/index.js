@@ -15,7 +15,7 @@ import {
   Radio,
   Text
 } from '@chakra-ui/react';
-// import { Document, Page, pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 import Termspdf from '../../../Assets/terms-and-cond.pdf';
 
 const TermsAndConditions = ({ handleChange }) => {
@@ -24,7 +24,7 @@ const TermsAndConditions = ({ handleChange }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
   function loadSuccess ({ numPages }) {
     setNumPages(numPages);
@@ -37,16 +37,15 @@ const TermsAndConditions = ({ handleChange }) => {
 
   return (
     <>
+      <Button mt={3} onClick={onOpen} bg="lightgray">
+        Leer Términos y Condiciones
+      </Button>
       <RadioGroup label="RadioButton" value={acceptDeclineValue} onChange={setAceptDeclineValue}>
         <Stack direction="row">
           <Radio  value="accept">He leído y acepto.</Radio>
           <Radio  value="decline">No acepto.</Radio>
         </Stack>
-      </RadioGroup>
-      <Button mt={3} onClick={onOpen} bg="lightgray">
-        Leer Términos y Condiciones
-      </Button>
-      
+      </RadioGroup> 
      
       <Modal
         onClose={onClose}
@@ -61,17 +60,17 @@ const TermsAndConditions = ({ handleChange }) => {
           </ModalHeader>
           <ModalBody >
             <Box>
-              {/* <Document file={Termspdf} onLoadSuccess={loadSuccess}>
+              <Document file={Termspdf} onLoadSuccess={loadSuccess}>
                 <Page width={500} pageNumber={pageNumber} setNumPages={pageNumber} />
-              </Document> */}
+              </Document>
             </Box>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={() => onClose(handleState('accept'))}>
-              Aceptar
+            <Button onClick={() => onClose(handleState('accept'))} mr={2}>
+              Acepto
             </Button>
             <Button onClick={() => onClose(handleState('decline'))}>
-              Cancelar
+              No acepto
             </Button>
           </ModalFooter>
         </ModalContent>
